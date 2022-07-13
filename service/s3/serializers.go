@@ -9168,6 +9168,17 @@ func awsRestxml_serializeDocumentCreateBucketConfiguration(v *types.CreateBucket
 		el := value.MemberElement(root)
 		el.String(string(v.LocationConstraint))
 	}
+	if v.StorageClass != nil {
+		rootAttr := []smithyxml.Attr{}
+		root := smithyxml.StartElement{
+			Name: smithyxml.Name{
+				Local: "StorageClass",
+			},
+			Attr: rootAttr,
+		}
+		el := value.MemberElement(root)
+		el.String(*v.StorageClass)
+	}
 	return nil
 }
 
