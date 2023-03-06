@@ -580,6 +580,10 @@ func awsRestxml_serializeOpHttpBindingsCreateBucketInput(v *CreateBucketInput, e
 		encoder.SetHeader(locationName).String(string(v.ACL))
 	}
 
+	for mtKey,mtValue := range v.Metadata{
+		encoder.SetHeader(mtKey).String(mtValue)
+	}
+
 	if v.Bucket == nil || len(*v.Bucket) == 0 {
 		return &smithy.SerializationError{Err: fmt.Errorf("input member Bucket must not be empty")}
 	}
