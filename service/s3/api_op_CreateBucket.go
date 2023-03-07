@@ -155,7 +155,6 @@ type CreateBucketInput struct {
 
 	// The canned ACL to apply to the bucket.
 	ACL types.BucketCannedACL
-	CusHeader map[string]string
 
 	// The configuration information for the bucket.
 	CreateBucketConfiguration *types.CreateBucketConfiguration
