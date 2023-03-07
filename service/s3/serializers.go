@@ -580,7 +580,7 @@ func awsRestxml_serializeOpHttpBindingsCreateBucketInput(v *CreateBucketInput, e
 		encoder.SetHeader(locationName).String(string(v.ACL))
 	}
 
-	for mtKey,mtValue := range v.Metadata{
+	for mtKey,mtValue := range v.CusHeader{
 		encoder.SetHeader(mtKey).String(mtValue)
 	}
 
